@@ -25,3 +25,4 @@ then
 else
     echo "git is already installed, nothing to do.."
 fi    
+
