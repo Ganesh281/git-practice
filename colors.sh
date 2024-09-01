@@ -39,10 +39,10 @@ fi
 
 if [$? -ne 0 ]
 then 
-     echo "mysql is not installed, going to install.."
+     echo "MySQL is not installed, going to install.."
      dnf install mysql -y
      VALIDATE $? "Installing MySQL"
      
 else
-    echo "mysql is already installed, nothing to do.."
+    echo "MySQL is already installed, nothing to do.."
 fi    
