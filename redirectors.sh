@@ -3,7 +3,7 @@
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPTNAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOGFILE="$LOGS_FOLDER/$SCRIPTNAME/$TIMESTAMP.log"
+LOGFILE="$LOGS_FOLDER/$SCRIPTNAME-$TIMESTAMP.log"
 
 mkdir -p $LOGS_FOLDER
 
@@ -33,9 +33,18 @@ VALIDATE(){
     fi
 }
 
-# USAGE(){
-#     echo -e "$R USAGE:: $N sudo sh redirectors "
-# }
+USAGE(){
+     echo -e "$R USAGE:: $N sudo sh redirectors "
+     exit 1
+ }
+echo "Script satrts executeing at : $(date)" | tee -a $LOGFILE
+
+CHECK_ROOT
+
+if [ $# -eq 0 ]
+    then
+        USAGE
+fi
 
 for package in $@
 do
