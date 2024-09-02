@@ -53,8 +53,8 @@ do
     then
         echo " $Y $package is not installed,going to install it $N" | tee -a $LOGFILE
         dnf install $package -y
-        VALIDATE $? " $Y INSTALLING $package $N" | tee -a $LOGFILE
+        VALIDATE $? " $Y INSTALLING $package $N " | tee -a $LOGFILE
     else
-        echo "$G $package already installed $N" | tee -a $LOGFILE
+        echo " $R $package already installed $N " | tee -a $LOGFILE
     fi
 done
