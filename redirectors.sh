@@ -55,6 +55,6 @@ do
         dnf install $package -y
         VALIDATE $? " $Y INSTALLING $package $N " | tee -a $LOGFILE
     else
-        echo " $R $package already installed $N " | tee -a $LOGFILE
+        echo " $package $G already installed $N " | tee -a $LOGFILE
     fi
 done
