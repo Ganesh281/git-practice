@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in {0..15}
+for v in {0..123}
 do
-    echo $i
+    echo $v
 done
