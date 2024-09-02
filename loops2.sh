@@ -24,6 +24,8 @@ VALIDATE(){
     fi
 }
 
+CHECK_ROOT
+
 for package in $@
 do
     dnf list installed $package
